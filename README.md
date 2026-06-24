@@ -1,4 +1,19 @@
 # 🎓 Teenage Student Dropout Risk Prediction Using Machine Learning & Explainable AI
+
+<div align="center">
+
+![Python](https://img.shields.io/badge/Python-3.8%2B-blue?style=for-the-badge&logo=python)
+![XGBoost](https://img.shields.io/badge/XGBoost-Best%20Model-orange?style=for-the-badge)
+![SHAP](https://img.shields.io/badge/XAI-SHAP%20%26%20LIME-green?style=for-the-badge)
+![Streamlit](https://img.shields.io/badge/Deployed-Streamlit-red?style=for-the-badge&logo=streamlit)
+![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)
+
+**[🚀 Live Demo](https://oknyvgdstn7dqi5cbfnskh.streamlit.app/) · [📓 Google Colab Notebook](https://colab.research.google.com/drive/1O2gihhyMOb2Gk_ol8BXIHCoGBKO0bGdp?usp=sharing) · [📊 Dataset (Kaggle)](https://www.kaggle.com/datasets/abdullah0a/student-dropout-analysis-and-prediction-dataset)**
+
+</div>
+
+---
+
 ## 📌 Overview
 
 Student dropout is a critical challenge facing educational institutions worldwide. Early identification of at-risk students enables timely intervention, improving retention rates and academic outcomes.
@@ -241,4 +256,6 @@ If you found this project useful, please consider giving it a ⭐ — it helps o
 
 ---
 
-<
+<div align="center">
+<i>Built with ❤️ to help educational institutions identify and support at-risk students.</i>
+</div>
