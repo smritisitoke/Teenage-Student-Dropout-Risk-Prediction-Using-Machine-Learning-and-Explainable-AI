@@ -1,156 +1,244 @@
-# Teenage-Student-Dropout-Risk-Prediction-Using-Machine-Learning-and-Explainable-AI
-Project Overview
-Student dropout is a major concern for educational institutions. Early identification of at-risk students helps institutions take preventive actions and improve student retention.
-This project aims to predict student dropout risk using Machine Learning and provide interpretable insights using Explainable AI techniques (LIME & SHAP).
-The model analyzes demographic, academic, and behavioral features to predict whether a student is likely to drop out.
+# 🎓 Teenage Student Dropout Risk Prediction Using Machine Learning & Explainable AI
+## 📌 Overview
 
-🎯 Project Objectives
-Predict student dropout risk using Machine Learning
-Perform Exploratory Data Analysis (EDA)
-Handle class imbalance using multiple techniques
-Compare multiple models
-Implement Explainable AI (LIME & SHAP)
-Identify key factors affecting student dropout
+Student dropout is a critical challenge facing educational institutions worldwide. Early identification of at-risk students enables timely intervention, improving retention rates and academic outcomes.
 
-📊 Dataset Information
-Total Records: 649
-Total Features: 34
-Target Variable: Dropped_Out
-Dataset Type: Structured Educational Dataset
-Features Include
-Demographic Information
-Academic Performance
-Family Background
-Behavioral Attributes
-Attendance & Grades
+This project builds an end-to-end ML pipeline that:
+- **Predicts** whether a teenage student is likely to drop out
+- **Explains** individual and global predictions using LIME and SHAP (Explainable AI)
+- **Deploys** a real-time prediction interface via Streamlit
 
-⚙️ Project Workflow
-Data Collection
-↓
-Data Cleaning
-↓
-Outlier Removal
-↓
-Encoding
-↓
+> **Research Context:** Conducted as part of a Data Science research internship focused on ML and Explainable AI.
+
+---
+
+## 🎯 Objectives
+
+- ✅ Predict student dropout risk from structured educational data
+- ✅ Perform thorough Exploratory Data Analysis (EDA)
+- ✅ Handle class imbalance using multiple strategies
+- ✅ Train and compare multiple ML models
+- ✅ Implement Explainable AI using LIME & SHAP
+- ✅ Deploy an interactive prediction app on Streamlit
+
+---
+
+## 📊 Dataset
+
+| Attribute | Details |
+|-----------|---------|
+| **Total Records** | 649 students |
+| **Total Features** | 34 |
+| **Target Variable** | `Dropped_Out` (Binary) |
+| **Dataset Type** | Structured Educational Dataset |
+| **Source** | [Kaggle — Student Dropout Analysis](https://www.kaggle.com/datasets/abdullah0a/student-dropout-analysis-and-prediction-dataset) |
+
+### Feature Categories
+
+| Category | Examples |
+|----------|---------|
+| 🧍 Demographic | Age, Gender, Family Size |
+| 📚 Academic | Grades, Study Time, Failures |
+| 👨‍👩‍👧 Family Background | Family Support, Parent Education |
+| 📅 Behavioral | Attendance, Absences, Activities |
+
+---
+
+## ⚙️ Project Workflow
+
+```
+Data Collection → Data Cleaning → Outlier Removal → Encoding
+       ↓
 Exploratory Data Analysis (EDA)
-↓
-Train-Test Split
-↓
-Class Imbalance Handling
-↓
-Model Training
-↓
-Model Evaluation
-↓
-Explainability (LIME + SHAP)
-↓
-Final Insights
+       ↓
+Train-Test Split → Class Imbalance Handling
+       ↓
+Model Training → Model Evaluation
+       ↓
+Explainability (LIME + SHAP) → Final Insights → Streamlit Deployment
+```
 
-🔍 Exploratory Data Analysis (EDA)
-EDA was performed using:
-Count Plots
-Histograms
-Box Plots
-Correlation Heatmap
-Pairplots
-Key Findings
-Students with lower grades more likely to drop out
-Higher absences increase dropout risk
-Academic failures strongly impact dropout
-Study time influences student retention
+---
 
-⚖️ Class Imbalance Handling Techniques
-The dataset was imbalanced, so multiple techniques were applied:
-Random Under Sampling
-Random Over Sampling
-SMOTE
-Cost Sensitive Learning
-Ensemble Learning
-AdaBoost
-XGBoost
+## 🔍 Exploratory Data Analysis
 
-🤖 Models Used
-Logistic Regression
-Random Forest
-AdaBoost
-XGBoost (Best Performing Model)
+EDA was performed using count plots, histograms, box plots, correlation heatmaps, and pairplots.
 
-📈 Model Performance Comparison
-Model	Performance
-Logistic Regression	Moderate
-Random Under Sampling	Lower
-Random Over Sampling	Good
-SMOTE	Good
-Ensemble Learning	Very Good
-Cost Sensitive Learning	Good
-AdaBoost	Very Good
-XGBoost	Best
+### Key Findings
 
-🧠 Explainable AI
-LIME
-LIME was used to explain individual predictions.
-Key Influential Features:
-Grade_2
-Absences
-Family Support
-Study Time
-Gender
-SHAP
-SHAP was used to explain global feature importance.
-Top Features:
-Final Grade
-Absences
-Failures
-Study Time
-Family Support
+| Finding | Insight |
+|---------|---------|
+| 📉 Lower grades | Strongly correlated with dropout |
+| 🏫 High absences | Significantly increase dropout risk |
+| ❌ Academic failures | Most impactful single predictor |
+| 📖 Study time | Higher study time reduces dropout probability |
+| 👨‍👩‍👧 Family support | Acts as a protective factor |
 
-🛠️ Technologies Used
-Programming Language
-Python
-Libraries
-Pandas
-NumPy
-Scikit-learn
-Imbalanced-learn
-XGBoost
-Matplotlib
-Seaborn
-LIME
-SHAP
+---
 
-💻 Platform Used
-Google Colab
-GitHub
+## ⚖️ Class Imbalance Handling
 
-📁 Project Structure
-Student-Dropout-Prediction
+The dataset was imbalanced. The following techniques were applied and compared:
+
+| Technique | Description |
+|-----------|-------------|
+| **Random Under Sampling** | Reduce majority class samples |
+| **Random Over Sampling** | Duplicate minority class samples |
+| **SMOTE** | Synthetic Minority Over-sampling Technique |
+| **Cost-Sensitive Learning** | Penalize misclassification of minority class |
+| **Ensemble Learning** | AdaBoost & XGBoost (built-in imbalance handling) |
+
+---
+
+## 🤖 Models & Performance
+
+| Model | Performance |
+|-------|-------------|
+| Logistic Regression | Moderate |
+| Random Under Sampling + Classifier | Lower |
+| Random Over Sampling + Classifier | Good |
+| SMOTE + Classifier | Good |
+| Cost-Sensitive Learning | Good |
+| AdaBoost | Very Good |
+| **XGBoost** | ⭐ **Best** |
+
+> **Best Model: XGBoost** — selected for deployment due to its superior performance on imbalanced educational data.
+
+---
+
+## 🧠 Explainable AI (XAI)
+
+Explainability is central to this project. Both local and global explanation methods are implemented.
+
+### 🔵 LIME — Local Interpretable Model-Agnostic Explanations
+Explains **individual predictions** by approximating the model locally.
+
+**Key Influential Features (per prediction):**
+- Grade_2
+- Absences
+- Family Support
+- Study Time
+- Gender
+
+### 🔴 SHAP — SHapley Additive exPlanations
+Explains **global feature importance** across the entire dataset.
+
+**Top Global Features:**
+1. Final Grade
+2. Absences
+3. Number of Failures
+4. Study Time
+5. Family Support
+
+---
+
+## 📁 Repository Structure
+
+```
+Teenage-Student-Dropout-Risk-Prediction/
 │
-├── Data
-├── EDA Notebook
-├── Model Notebook
-├── LIME & SHAP Notebook
-├── Final Report
-├── Presentation
+├── .devcontainer/                        # Dev Container configuration
+├── EDA_OF_DROPOUT_PREDICTION (3).ipynb  # Exploratory Data Analysis notebook
+├── Student_dropout_risk_prediction.ipynb # Model training & evaluation notebook
+├── app.py                                # Streamlit entry point
+├── streamlit_app.py                      # Main Streamlit application
+├── requirements.txt                      # Python dependencies
+├── student dropout.csv                   # Dataset
+├── xg_model_pipe (1).pkl                 # Trained XGBoost pipeline (serialized)
 └── README.md
+```
 
-📌 Key Insights
-Academic performance is the strongest predictor
-Absences significantly impact dropout
-Students with failures are at higher risk
-Family support reduces dropout probability
+---
 
-🚀 Future Improvements
-Use Deep Learning models
-Build Web Dashboard
-Real-time Prediction System
-Deploy Model
+## 🚀 Live Demo
 
-📎 Project Links
-Google Colab Notebook:
-https://colab.research.google.com/drive/1O2gihhyMOb2Gk_ol8BXIHCoGBKO0bGdp?usp=sharing
-Dataset Source:
-https://www.kaggle.com/datasets/abdullah0a/student-dropout-analysis-and-prediction-dataset
+The model is deployed on **Streamlit Community Cloud**.
 
-⭐ Conclusion
-This project successfully predicts student dropout risk using Machine Learning and Explainable AI. The model achieved strong performance and provided interpretable insights that can help educational institutions identify at-risk students and improve retention
+👉 **[Try it here: https://oknyvgdstn7dqi5cbfnskh.streamlit.app/](https://oknyvgdstn7dqi5cbfnskh.streamlit.app/)**
+
+Enter a student's demographic, academic, and behavioral details to get:
+- ✅ Dropout risk prediction (Yes / No)
+- 📊 Probability score
+- 🔍 SHAP-based explanation of the prediction
+
+---
+
+## 🛠️ Tech Stack
+
+| Category | Tools |
+|----------|-------|
+| **Language** | Python 3.8+ |
+| **ML Libraries** | Scikit-learn, XGBoost, Imbalanced-learn |
+| **XAI** | SHAP, LIME |
+| **Data Processing** | Pandas, NumPy |
+| **Visualization** | Matplotlib, Seaborn |
+| **Deployment** | Streamlit, Streamlit Community Cloud |
+| **Development** | Google Colab, GitHub |
+
+---
+
+## 💻 Run Locally
+
+```bash
+# Clone the repository
+git clone https://github.com/smritisitoke/Teenage-Student-Dropout-Risk-Prediction-Using-Machine-Learning-and-Explainable-AI.git
+cd Teenage-Student-Dropout-Risk-Prediction-Using-Machine-Learning-and-Explainable-AI
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Run the Streamlit app
+streamlit run streamlit_app.py
+```
+
+---
+
+## 📌 Key Insights
+
+> 📢 These findings can help educational institutions design targeted intervention programs.
+
+1. **Academic performance** is the strongest predictor of dropout risk
+2. **Absenteeism** significantly increases the likelihood of dropping out
+3. **Students with prior failures** are at the highest risk
+4. **Family support** acts as a protective factor, reducing dropout probability
+5. **Study time** is positively associated with student retention
+
+---
+
+## 🔮 Future Improvements
+
+- [ ] Integrate Deep Learning models (LSTM for temporal patterns)
+- [ ] Build a full-featured web dashboard with admin panel
+- [ ] Real-time prediction with student management system integration
+- [ ] Expand dataset with more diverse demographic sources
+- [ ] Add multilingual support for broader accessibility
+
+---
+
+## 👩‍💻 Author
+
+**Smriti Sitoke**  
+B.Tech — Computer Science & Business Systems  
+*Data Science Research Intern | ML & Explainable AI Enthusiast*
+
+[![GitHub](https://img.shields.io/badge/GitHub-smritisitoke-black?style=flat&logo=github)](https://github.com/smritisitoke)
+
+---
+
+## 📎 Links
+
+| Resource | Link |
+|----------|------|
+| 🚀 Live App | [Streamlit Deployment](https://oknyvgdstn7dqi5cbfnskh.streamlit.app/) |
+| 📓 Colab Notebook | [Google Colab](https://colab.research.google.com/drive/1O2gihhyMOb2Gk_ol8BXIHCoGBKO0bGdp?usp=sharing) |
+| 📊 Dataset | [Kaggle](https://www.kaggle.com/datasets/abdullah0a/student-dropout-analysis-and-prediction-dataset) |
+
+---
+
+## ⭐ Star This Repo
+
+If you found this project useful, please consider giving it a ⭐ — it helps others discover it!
+
+---
+
+<
